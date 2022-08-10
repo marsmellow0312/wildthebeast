@@ -76,7 +76,7 @@ let CONTRACT_ADDRESS = "YOUR CONTRACT ADDRESS"; // If you want to manually inclu
 // Generic Metadata is optional if you want to reveal your NFTs
 const GENERIC = true; // Set to true if you want to upload generic metas and reveal the real NFTs in the future
 const GENERIC_TITLE = CONTRACT_NAME; // Replace with what you want the generic titles to say if you want it to be different from the contract name.
-const GENERIC_DESCRIPTION = "WTB is a collection of 12,000 NFT Beasts a unique digital collection that lives on the Ethereum blockchain. Each character is born from a unique algorithm, the rarer your BEAST trait, the stronger it is in the game. Your The Beast doubles as your in-game Beast Ecosystem membership card, and grants access to member-only benefits, the first of which is access to THE WILD GAME . Future areas and facilities can be unlocked by the community through roadmap activation. Visit www.WildTheBeast.com for more details."; // Replace with what you want the generic descriptions to say.
+const GENERIC_DESCRIPTION = "The Beast will be released from the cage once you decide to launch on the blockchain"; // Replace with what you want the generic descriptions to say.
 const GENERIC_IMAGE = "https://ipfs.io/ipfs/bafybeie6eeawa5lmqnhnedcfm3hwtbtiqztumihg4ntfnxw5mllx4nakwq"; // Replace with your generic image that will display for all NFTs pre-reveal.
 
 // Automatically set contract address if deployed using the deployContract.js script
@@ -95,7 +95,7 @@ try {
 
 const solanaMetadata = {
   symbol: "YC",
-  seller_fee_basis_points: 250, // Define how much % you want from secondary market sales 1000 = 10%
+  seller_fee_basis_points: 500, // Define how much % you want from secondary market sales 1000 = 10%
   external_url: "https://www.youtube.com/wildthebeast",
   creators: [
     {
