@@ -4,22 +4,7 @@
   "description": "Landing page to be used with an NFTPort Collection Contract",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "react-scripts start",
-    "build": "react-scripts build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/codeSTACKr/nft-landing-page.git"
-  },
-  "keywords": [],
-  "author": "Jesse Hall (codeSTACKr)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/codeSTACKr/nft-landing-page/issues"
-  },
-  "homepage": "https://github.com/codeSTACKr/nft-landing-page#readme",
-  "dependencies": {
-    "node-fetch": "^2.6.7"
+    "test": "echo \"Error: no test specified\" && exit 1"
+
   }
 }
