@@ -22,7 +22,7 @@
     "update_info": "node utils/update_info.js",
     "preview_gif": "node utils/preview_gif.js",
     "create_generic": "node utils/nftport/genericMetas",
-    "upload_files": "node utils/nftport/uploadFiles",
+    "upload_files": "node utils/nftport/uploadFiles",  
     "upload_metadata": "node utils/nftport/uploadMetas",
     "deploy_contract": "node utils/nftport/deployContract",
     "get_contract": "node utils/nftport/retrieveContract",
