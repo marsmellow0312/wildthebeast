@@ -53,8 +53,8 @@ const CHAIN = 'rinkeby'; // only rinkeby, polygon, or ethereum
 const CONTRACT_NAME = 'WILD THE BEAST';
 const CONTRACT_SYMBOL = 'WTB';
 const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
-const OWNER_ADDRESS = '0x627347A67D1538B02B4374a227e6eB18c820D68A';
-const TREASURY_ADDRESS = '0x6F623193a4ec6530b64fBAB62D7Df8F3F9224b55';
+const OWNER_ADDRESS = '0x6F623193a4ec6530b64fBAB62D7Df8F3F9224b55';
+const TREASURY_ADDRESS = '0x627347A67D1538B02B4374a227e6eB18c820D68A';
 const MAX_SUPPLY = 12000; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
 const MINT_PRICE = 0.20; // Minting price per NFT. Rinkeby = ETH, Ethereum = ETH, Polygon = MATIC. CANNOT BE UPDATED!
 const TOKENS_PER_MINT = 100; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
@@ -65,7 +65,7 @@ const PUBLIC_MINT_START_DATE = "2022-08-15T11:30:48+00:00"; // This is required.
 // OPTIONAL CONTRACT DETAILS THAT CAN BE UPDATED LATER.
 const PRESALE_MINT_START_DATE = null; // Optional. Eg: 2022-02-08T11:30:48+00:00
 const ROYALTY_SHARE = 250; // Percentage of the token price that goes to the royalty address. 100 bps = 1%
-const ROYALTY_ADDRESS = "0x6F623193a4ec6530b64fBAB62D7Df8F3F9224b55"; // Address that will receive the royalty
+const ROYALTY_ADDRESS = "0x627347A67D1538B02B4374a227e6eB18c820D68A"; // Address that will receive the royalty
 const BASE_URI = null; // only update if you want to manually set the base uri
 const PREREVEAL_TOKEN_URI = null; // only update if you want to manually set the prereveal token uri
 const PRESALE_WHITELISTED_ADDRESSES = []; // only update if you want to manually set the whitelisted addresses
@@ -76,7 +76,7 @@ let CONTRACT_ADDRESS = "YOUR CONTRACT ADDRESS"; // If you want to manually inclu
 // Generic Metadata is optional if you want to reveal your NFTs
 const GENERIC = true; // Set to true if you want to upload generic metas and reveal the real NFTs in the future
 const GENERIC_TITLE = CONTRACT_NAME; // Replace with what you want the generic titles to say if you want it to be different from the contract name.
-const GENERIC_DESCRIPTION = "The Beast will be released from the cage once you decide to launch on the blockchain"; // Replace with what you want the generic descriptions to say.
+const GENERIC_DESCRIPTION = "The Beast will be released from the cage once you decide to launch on the wildland"; // Replace with what you want the generic descriptions to say.
 const GENERIC_IMAGE = "https://ipfs.io/ipfs/bafybeie6eeawa5lmqnhnedcfm3hwtbtiqztumihg4ntfnxw5mllx4nakwq"; // Replace with your generic image that will display for all NFTs pre-reveal.
 
 // Automatically set contract address if deployed using the deployContract.js script
@@ -99,7 +99,7 @@ const solanaMetadata = {
   external_url: "https://www.youtube.com/wildthebeast",
   creators: [
     {
-      address: "0x6F623193a4ec6530b64fBAB62D7Df8F3F9224b55",
+      address: "GrDrw9CxZUJLf998CYbxDiKckKtd2dG4gb9EMmLEnoen",
       share: 100,
     },
   ],
