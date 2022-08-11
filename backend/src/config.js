@@ -53,8 +53,8 @@ const CHAIN = 'rinkeby'; // only rinkeby, polygon, or ethereum
 const CONTRACT_NAME = 'WILD THE BEAST';
 const CONTRACT_SYMBOL = 'WTB';
 const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
-const OWNER_ADDRESS = '0x6F623193a4ec6530b64fBAB62D7Df8F3F9224b55';
-const TREASURY_ADDRESS = '0x627347A67D1538B02B4374a227e6eB18c820D68A';
+const OWNER_ADDRESS = '0x7C6019230af7F2C70855eED55A3fB602f56e0Ab5';
+const TREASURY_ADDRESS = '0xB83d697Ca388946fa785751Ab7Cdb1e125d95fB6';
 const MAX_SUPPLY = 12000; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
 const MINT_PRICE = 0.20; // Minting price per NFT. Rinkeby = ETH, Ethereum = ETH, Polygon = MATIC. CANNOT BE UPDATED!
 const TOKENS_PER_MINT = 100; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
@@ -65,7 +65,7 @@ const PUBLIC_MINT_START_DATE = "2022-08-25T11:30:48+00:00"; // This is required.
 // OPTIONAL CONTRACT DETAILS THAT CAN BE UPDATED LATER.
 const PRESALE_MINT_START_DATE = "2022-08-15T11:30:48+00:00"; // Optional. Eg: 2022-02-08T11:30:48+00:00
 const ROYALTY_SHARE = 250; // Percentage of the token price that goes to the royalty address. 100 bps = 1%
-const ROYALTY_ADDRESS = "0x627347A67D1538B02B4374a227e6eB18c820D68A"; // Address that will receive the royalty
+const ROYALTY_ADDRESS = "0xB83d697Ca388946fa785751Ab7Cdb1e125d95fB6"; // Address that will receive the royalty
 const BASE_URI = null; // only update if you want to manually set the base uri
 const PREREVEAL_TOKEN_URI = null; // only update if you want to manually set the prereveal token uri
 const PRESALE_WHITELISTED_ADDRESSES = []; // only update if you want to manually set the whitelisted addresses
