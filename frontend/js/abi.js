@@ -1547,7 +1547,6 @@ const abi = [
           "name": "newConfig",
           "type": "tuple"
         }
-        
       ],
       "name": "updateConfig",
       "outputs": [],
