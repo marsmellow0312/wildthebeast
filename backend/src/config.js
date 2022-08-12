@@ -55,9 +55,9 @@ const CONTRACT_SYMBOL = 'WTB';
 const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
 const OWNER_ADDRESS = '0x7C6019230af7F2C70855eED55A3fB602f56e0Ab5';
 const TREASURY_ADDRESS = '0xB83d697Ca388946fa785751Ab7Cdb1e125d95fB6';
-const MAX_SUPPLY = 12000; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
+const MAX_SUPPLY = 20; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
 const MINT_PRICE = 0.20; // Minting price per NFT. Rinkeby = ETH, Ethereum = ETH, Polygon = MATIC. CANNOT BE UPDATED!
-const TOKENS_PER_MINT = 100; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
+const TOKENS_PER_MINT = 2; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
 
 // REQUIRED CONTRACT DETAILS THAT CAN BE UPDATED LATER. 
 const PUBLIC_MINT_START_DATE = "2022-08-25T11:30:48+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
