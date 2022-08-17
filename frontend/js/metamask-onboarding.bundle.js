@@ -2418,14 +2418,24 @@ var MetaMaskOnboarding = (function () {
       /**
        * Checks whether the MetaMask extension is installed
        */
+      // Onboarding.isMetaMaskInstalled = function () {
+      //     return Boolean(window.ethereum && window.ethereum.isMetaMask);
+      // };
+      // Onboarding._register = function () {
+      //     return window.ethereum.request({
+      //         method: 'wallet_registerOnboarding',
+      //     });
+      // };
       Onboarding.isMetaMaskInstalled = function () {
-          return Boolean(window.ethereum && window.ethereum.isMetaMask);
-      };
-      Onboarding._register = function () {
-          return window.ethereum.request({
-              method: 'wallet_registerOnboarding',
-          });
-      };
+        return Boolean(window.rinkeby && window.rinkeby.isMetaMask);
+    };
+    Onboarding._register = function () {
+        return window.rinkeby.request({
+            method: 'wallet_registerOnboarding',
+        });
+    };
+
+      
       Onboarding._injectForwarder = function (forwarderOrigin) {
           var container = document.body;
           var iframe = document.createElement('iframe');
