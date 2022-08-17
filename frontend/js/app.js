@@ -179,7 +179,8 @@ async function loadInfo() {
     mainHeading.innerText = h1_presale_mint;
     subHeading.innerText = h2_presale_mint;
     
-    try {
+    try 
+    {
       // CHECK IF WHITELISTED
       const merkleData = await fetch(
         `/.netlify/functions/merkleProof/?wallet=${window.address}&chain=${chain}&contract=${contractAddress}`
@@ -195,7 +196,8 @@ async function loadInfo() {
         mintButton.innerText = button_presale_mint_whitelisted;
         mintContainer.classList.remove('hidden');
       }
-    } catch(e) {
+    } 
+    catch(e) {
       // console.log(e);
       mainText.innerText = p_presale_mint_already_minted;
       actionButton.innerText = button_presale_already_minted;
