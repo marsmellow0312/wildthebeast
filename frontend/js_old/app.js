@@ -156,10 +156,8 @@ async function checkChain() {
 
 async function loadInfo() {
   window.info = await window.contract.methods.getInfo().call();
-  const total_supply = await window.contract.methods.totalSupply().call();
   const publicMintActive = await contract.methods.mintingActive().call();
   const presaleMintActive = await contract.methods.presaleActive().call();
-  const hasBalance = await contract.methods.balanceOf(address).call();
   const mainHeading = document.getElementById("mainHeading");
   const subHeading = document.getElementById("subHeading");
   const mainText = document.getElementById("mainText");
@@ -170,33 +168,19 @@ async function loadInfo() {
 
   let startTime = "";
   if (publicMintActive) {
-    if(total_supply === info.deploymentConfig.maxSupply) {
-      mainHeading.innerText = "Secondary Sales Open!!";
-      mainText.innerHTML = "All codeSTACKr Token's have been minted. 🎉<br>Check OpenSea for secondary sales.";
-      actionButton.classList.remove('hidden');
-      actionButton.innerText = "View on OpenSea";
-      actionButton.href = "https://opensea.io/collection/codestackr-token";
-      mintContainer.classList.add('hidden');
-    } else if(hasBalance === '0') {
-      mainHeading.innerText = h1_public_mint;
-      mainText.innerText = p_public_mint;
-      actionButton.classList.add('hidden');
-      mintButton.innerText = button_public_mint;
-      mintContainer.classList.remove('hidden');
-      setTotalPrice();
-    } else {
-      mainHeading.innerText = 'You Own A codeSTACKr Token!!';
-      mainText.innerText = 'Thank you for your support!';
-      actionButton.classList.remove('hidden');
-      mintButton.innerText = button_public_mint;
-      mintContainer.classList.add('hidden');
-    }
+    mainHeading.innerText = h1_public_mint;
+    mainText.innerText = p_public_mint;
+    actionButton.classList.add('hidden');
+    mintButton.innerText = button_public_mint;
+    mintContainer.classList.remove('hidden');
+    setTotalPrice();
   } else if (presaleMintActive) {
     startTime = window.info.runtimeConfig.publicMintStart;
     mainHeading.innerText = h1_presale_mint;
     subHeading.innerText = h2_presale_mint;
     
-    try {
+    try 
+    {
       // CHECK IF WHITELISTED
       const merkleData = await fetch(
         `/.netlify/functions/merkleProof/?wallet=${window.address}&chain=${chain}&contract=${contractAddress}`
@@ -212,8 +196,9 @@ async function loadInfo() {
         mintButton.innerText = button_presale_mint_whitelisted;
         mintContainer.classList.remove('hidden');
       }
-    } catch(e) {
-      // console.log(e);
+    } 
+    catch(e) {
+      console.log(e);
       mainText.innerText = p_presale_mint_already_minted;
       actionButton.innerText = button_presale_already_minted;
     }
@@ -253,7 +238,7 @@ async function loadInfo() {
   
   pricePerMint.innerText = `${price} ${priceType}`;
   maxPerMint.innerText = `${info.deploymentConfig.tokensPerMint}`;
-  totalSupply.innerText = `${total_supply}/${info.deploymentConfig.maxSupply}`;
+  totalSupply.innerText = `${info.deploymentConfig.maxSupply}`;
   mintInput.setAttribute("max", info.deploymentConfig.tokensPerMint);
 
   // MINT INPUT
@@ -395,7 +380,7 @@ async function mint() {
       mintButton.innerText = button_presale_mint_whitelisted;
       mintButton.disabled = false;
 
-      // console.log(e);
+      console.log(e);
     }
   }
 }

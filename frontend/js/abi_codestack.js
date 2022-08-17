@@ -1,119 +1,8 @@
 const abi = [
   {
-    "inputs": [
-      {
-        "components": [
-          {
-            "internalType": "string",
-            "name": "name",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "symbol",
-            "type": "string"
-          },
-          {
-            "internalType": "address",
-            "name": "owner",
-            "type": "address"
-          },
-          {
-            "internalType": "uint256",
-            "name": "maxSupply",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "reservedSupply",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "tokensPerMint",
-            "type": "uint256"
-          },
-          {
-            "internalType": "address payable",
-            "name": "treasuryAddress",
-            "type": "address"
-          }
-        ],
-        "internalType": "struct NFTCollection.DeploymentConfig",
-        "name": "deploymentConfig",
-        "type": "tuple"
-      },
-      {
-        "components": [
-          {
-            "internalType": "string",
-            "name": "baseURI",
-            "type": "string"
-          },
-          {
-            "internalType": "bool",
-            "name": "metadataUpdatable",
-            "type": "bool"
-          },
-          {
-            "internalType": "uint256",
-            "name": "publicMintPrice",
-            "type": "uint256"
-          },
-          {
-            "internalType": "bool",
-            "name": "publicMintPriceFrozen",
-            "type": "bool"
-          },
-          {
-            "internalType": "uint256",
-            "name": "presaleMintPrice",
-            "type": "uint256"
-          },
-          {
-            "internalType": "bool",
-            "name": "presaleMintPriceFrozen",
-            "type": "bool"
-          },
-          {
-            "internalType": "uint256",
-            "name": "publicMintStart",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "presaleMintStart",
-            "type": "uint256"
-          },
-          {
-            "internalType": "string",
-            "name": "prerevealTokenURI",
-            "type": "string"
-          },
-          {
-            "internalType": "bytes32",
-            "name": "presaleMerkleRoot",
-            "type": "bytes32"
-          },
-          {
-            "internalType": "uint256",
-            "name": "royaltiesBps",
-            "type": "uint256"
-          },
-          {
-            "internalType": "address",
-            "name": "royaltiesAddress",
-            "type": "address"
-          }
-        ],
-        "internalType": "struct NFTCollection.RuntimeConfig",
-        "name": "runtimeConfig",
-        "type": "tuple"
-      }
-    ],
+    "inputs": [],
     "stateMutability": "nonpayable",
-    "type": "constructor",
-    "signature": "constructor"
+    "type": "constructor"
   },
   {
     "inputs": [],
@@ -226,20 +115,6 @@ const abi = [
     "name": "ApprovalForAll",
     "type": "event",
     "signature": "0x17307eab39ab6107e8899845ad3d59bd9653f200f220920489ca2b5937696c31"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "uint8",
-        "name": "version",
-        "type": "uint8"
-      }
-    ],
-    "name": "Initialized",
-    "type": "event",
-    "signature": "0x7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb3847402498"
   },
   {
     "anonymous": false,
@@ -394,21 +269,6 @@ const abi = [
     "type": "function",
     "constant": true,
     "signature": "0xa217fddf"
-  },
-  {
-    "inputs": [],
-    "name": "ROYALTIES_BASIS",
-    "outputs": [
-      {
-        "internalType": "uint16",
-        "name": "",
-        "type": "uint16"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true,
-    "signature": "0x9da5b0a5"
   },
   {
     "inputs": [],
@@ -571,6 +431,11 @@ const abi = [
               },
               {
                 "internalType": "uint256",
+                "name": "mintPrice",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
                 "name": "tokensPerMint",
                 "type": "uint256"
               },
@@ -594,26 +459,6 @@ const abi = [
               {
                 "internalType": "bool",
                 "name": "metadataUpdatable",
-                "type": "bool"
-              },
-              {
-                "internalType": "uint256",
-                "name": "publicMintPrice",
-                "type": "uint256"
-              },
-              {
-                "internalType": "bool",
-                "name": "publicMintPriceFrozen",
-                "type": "bool"
-              },
-              {
-                "internalType": "uint256",
-                "name": "presaleMintPrice",
-                "type": "uint256"
-              },
-              {
-                "internalType": "bool",
-                "name": "presaleMintPriceFrozen",
                 "type": "bool"
               },
               {
@@ -759,6 +604,11 @@ const abi = [
           },
           {
             "internalType": "uint256",
+            "name": "mintPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
             "name": "tokensPerMint",
             "type": "uint256"
           },
@@ -782,26 +632,6 @@ const abi = [
           {
             "internalType": "bool",
             "name": "metadataUpdatable",
-            "type": "bool"
-          },
-          {
-            "internalType": "uint256",
-            "name": "publicMintPrice",
-            "type": "uint256"
-          },
-          {
-            "internalType": "bool",
-            "name": "publicMintPriceFrozen",
-            "type": "bool"
-          },
-          {
-            "internalType": "uint256",
-            "name": "presaleMintPrice",
-            "type": "uint256"
-          },
-          {
-            "internalType": "bool",
-            "name": "presaleMintPriceFrozen",
             "type": "bool"
           },
           {
@@ -844,7 +674,7 @@ const abi = [
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function",
-    "signature": "0xd1bff694"
+    "signature": "0xeec1b5d5"
   },
   {
     "inputs": [
@@ -942,6 +772,21 @@ const abi = [
     "type": "function",
     "payable": true,
     "signature": "0xa0712d68"
+  },
+  {
+    "inputs": [],
+    "name": "mintPrice",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true,
+    "signature": "0x6817c76c"
   },
   {
     "inputs": [],
@@ -1076,21 +921,6 @@ const abi = [
   },
   {
     "inputs": [],
-    "name": "presaleMintPrice",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true,
-    "signature": "0x5be50521"
-  },
-  {
-    "inputs": [],
     "name": "presaleMintStart",
     "outputs": [
       {
@@ -1103,21 +933,6 @@ const abi = [
     "type": "function",
     "constant": true,
     "signature": "0x4653124b"
-  },
-  {
-    "inputs": [],
-    "name": "publicMintPrice",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true,
-    "signature": "0xdc53fd92"
   },
   {
     "inputs": [],
@@ -1494,26 +1309,6 @@ const abi = [
           },
           {
             "internalType": "uint256",
-            "name": "publicMintPrice",
-            "type": "uint256"
-          },
-          {
-            "internalType": "bool",
-            "name": "publicMintPriceFrozen",
-            "type": "bool"
-          },
-          {
-            "internalType": "uint256",
-            "name": "presaleMintPrice",
-            "type": "uint256"
-          },
-          {
-            "internalType": "bool",
-            "name": "presaleMintPriceFrozen",
-            "type": "bool"
-          },
-          {
-            "internalType": "uint256",
             "name": "publicMintStart",
             "type": "uint256"
           },
@@ -1552,7 +1347,7 @@ const abi = [
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function",
-    "signature": "0xd761aa48"
+    "signature": "0x877bb1ae"
   },
   {
     "inputs": [],
