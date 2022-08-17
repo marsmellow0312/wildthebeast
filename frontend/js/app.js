@@ -198,7 +198,7 @@ async function loadInfo() {
       }
     } 
     catch(e) {
-      // console.log(e);
+      console.log(e);
       mainText.innerText = p_presale_mint_already_minted;
       actionButton.innerText = button_presale_already_minted;
     }
@@ -380,7 +380,7 @@ async function mint() {
       mintButton.innerText = button_presale_mint_whitelisted;
       mintButton.disabled = false;
 
-      // console.log(e);
+      console.log(e);
     }
   }
 }
