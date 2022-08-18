@@ -6,8 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeSTACKr/nft-landing-page.git"
+  },
+  "keywords": [],
+  "author": "Jesse Hall (codeSTACKr)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codeSTACKr/nft-landing-page/issues"
+  },
+  "homepage": "https://github.com/codeSTACKr/nft-landing-page#readme",
   "dependencies": {
-    "@metamask/onboarding": "^1.0.1",
-    "metamask": "^0.0.1-security"
+    "node-fetch": "^2.6.7"
   }
 }
