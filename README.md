@@ -110,7 +110,7 @@ $ npm run get_contract
 - Gets the deployed contract details including the contracts ABI using the transactions hash from the Deploy Contract command.
 
 Update Contract:
-```
+``` 
 $ npm run update_public_mint_start_date
 $ npm run update_presale_mint_start_date
 $ npm run update_presale_whitelisted_addresses
