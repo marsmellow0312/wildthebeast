@@ -52,9 +52,9 @@ const CHAIN = 'rinkeby'; // only rinkeby, polygon, or ethereum
 // REQUIRED CONTRACT DETAILS THAT CANNOT BE UPDATED LATER!
 const CONTRACT_NAME = 'WILD THE BEAST';
 const CONTRACT_SYMBOL = 'WTB';
-// const CONTRACT_TYPE = 'erc721';
+const CONTRACT_TYPE = 'erc721';
 const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
-const OWNER_ADDRESS = '0x7C6019230af7F2C70855eED55A3fB602f56e0Ab5';
+const OWNER_ADDRESS = '0xB83d697Ca388946fa785751Ab7Cdb1e125d95fB6';
 const TREASURY_ADDRESS = '0xB83d697Ca388946fa785751Ab7Cdb1e125d95fB6';
 const MAX_SUPPLY = 20; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
 const MINT_PRICE = 0.20; // Minting price per NFT. Rinkeby = ETH, Ethereum = ETH, Polygon = MATIC. CANNOT BE UPDATED!
@@ -179,6 +179,7 @@ module.exports = {
   AUTH,
   LIMIT,
   CONTRACT_ADDRESS,
+  MINT_TO_ADDRESS,
   OWNER_ADDRESS,
   TREASURY_ADDRESS,
   CHAIN,
@@ -188,6 +189,7 @@ module.exports = {
   GENERIC_IMAGE,
   CONTRACT_NAME,
   CONTRACT_SYMBOL,
+  CONTRACT_TYPE,
   METADATA_UPDATABLE,
   ROYALTY_SHARE,
   ROYALTY_ADDRESS,
