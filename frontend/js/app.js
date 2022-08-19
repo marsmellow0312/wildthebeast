@@ -50,7 +50,7 @@ const updateConnectStatus = async () => {
   const onboarding = new MetaMaskOnboarding();
   const onboardButton = document.getElementById("connectWallet");
   const notConnected = document.querySelector('.not-connected');
-  // const spinner = document.getElementById("spinner");
+  const spinner = document.getElementById("spinner");
   if (!MetaMaskOnboarding.isMetaMaskInstalled()) {
     onboardButton.innerText = "Install MetaMask!";
     onboardButton.onclick = () => {
@@ -58,7 +58,7 @@ const updateConnectStatus = async () => {
       onboardButton.disabled = true;
       onboarding.startOnboarding();
       // HIDE SPINNER
-      // spinner.classList.add('hidden');
+      spinner.classList.add('hidden');
       notConnected.classList.remove('hidden');
       notConnected.classList.add('show-not-connected');
     };
@@ -70,13 +70,13 @@ const updateConnectStatus = async () => {
     notConnected.classList.remove('show-not-connected');
     notConnected.classList.add('hidden');
     // SHOW SPINNER
-    // spinner.classList.remove('hidden');
+    spinner.classList.remove('hidden');
     window.contract = new web3.eth.Contract(abi, contractAddress);
     loadInfo();
   } else {
     onboardButton.innerText = "Connect MetaMask!";
-    // // HIDE SPINNER
-    // spinner.classList.add('hidden');
+    // HIDE SPINNER
+    spinner.classList.add('hidden');
     notConnected.classList.remove('hidden');
     notConnected.classList.add('show-not-connected');
     onboardButton.onclick = async () => {
@@ -89,7 +89,7 @@ const updateConnectStatus = async () => {
           notConnected.classList.remove('show-not-connected');
           notConnected.classList.add('hidden');
           // SHOW SPINNER
-          // spinner.classList.remove('hidden');
+          spinner.classList.remove('hidden');
           onboardButton.disabled = true;
           window.address = accts[0];
           accounts = accts;
@@ -105,7 +105,9 @@ async function checkChain() {
   if(chain === 'rinkeby') {
     chainId = 4;
   } else if(chain === 'polygon') {
-    chainId = 137;
+    chainId = 89;
+  } else if(chain === 'polygon Testnet') {
+    chainId = 13881;
   } else if(chain === 'ethereum') {
     chainId = 1;
   }
@@ -125,9 +127,9 @@ async function checkChain() {
               method: 'wallet_addEthereumChain',
               params: [
                 {
-                  chainName: 'Rinkeby Test Network',
+                  chainName: 'Rinkeby TestNet',
                   chainId: web3.utils.toHex(chainId),
-                  nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' },
+                  nativeCurrency: { name: 'ETH', decimals: 4, symbol: 'ETH' },
                   rpcUrls: ['https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'],
                 },
               ],
@@ -139,8 +141,44 @@ async function checkChain() {
                 {
                   chainName: 'Polygon Mainnet',
                   chainId: web3.utils.toHex(chainId),
-                  nativeCurrency: { name: 'MATIC', decimals: 18, symbol: 'MATIC' },
+                  nativeCurrency: { name: 'MATIC', decimals: 89, symbol: 'MATIC' },
                   rpcUrls: ['https://polygon-rpc.com/'],
+                },
+              ],
+            });
+          }  else if(chain === 'polygon Testnet') {
+            await window.ethereum.request({
+              method: 'wallet_addEthereumChain',
+              params: [
+                {
+                  chainName: 'Polygon Tesnet',
+                  chainId: web3.utils.toHex(chainId),
+                  nativeCurrency: { name: 'MATIC', decimals: 13881, symbol: 'MATIC' },
+                  rpcUrls: ['https://rpc-mumbai.maticvigil.com'],
+                },
+              ],
+            });
+          } else if(chain === 'Ethereum') {
+            await window.ethereum.request({
+              method: 'wallet_addEthereumChain',
+              params: [
+                {
+                  chainName: 'Ethereum Mainnet',
+                  chainId: web3.utils.toHex(chainId),
+                  nativeCurrency: { name: 'ETH', decimals: 1, symbol: 'ETH' },
+                  rpcUrls: ['https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'],
+                },
+              ],
+            });
+          } else if(chain === 'Solona') {
+            await window.ethereum.request({
+              method: 'wallet_addEthereumChain',
+              params: [
+                {
+                  chainName: 'Solona Mainnet',
+                  chainId: web3.utils.toHex(chainId),
+                  nativeCurrency: { name: 'SOL', decimals: 1, symbol: 'SOL' },
+                  rpcUrls: ['https://rpc.ankr.com/solana'],
                 },
               ],
             });
@@ -166,7 +204,7 @@ async function loadInfo() {
   const actionButton = document.getElementById("actionButton");
   const mintContainer = document.getElementById("mintContainer");
   const mintButton = document.getElementById("mintButton");
-  // const spinner = document.getElementById("spinner");
+  const spinner = document.getElementById("spinner");
 
   let startTime = "";
   if (publicMintActive) {
@@ -231,7 +269,7 @@ async function loadInfo() {
   countdown();
 
   // HIDE SPINNER
-  // spinner.classList.add('hidden');
+  spinner.classList.add('hidden');
 
   // SHOW CARD
   setTimeout(() => {
@@ -245,7 +283,7 @@ async function loadInfo() {
   } else if (chain === 'polygon') {
     priceType = 'MATIC';
   }
-  const price = web3.utils.fromWei(info.deploymentConfig.mintPrice, 'ether');
+  const price = web3.utils.fromWei(info.deploymentConfig.mintPrice, 'ETH');
   const pricePerMint = document.getElementById("pricePerMint");
   const maxPerMint = document.getElementById("maxPerMint");
   const totalSupply = document.getElementById("totalSupply");
@@ -310,7 +348,7 @@ function setTotalPrice() {
   } else if (chain === 'polygon') {
     priceType = 'MATIC';
   }
-  const price = web3.utils.fromWei(totalPriceWei.toString(), 'ether');
+  const price = web3.utils.fromWei(totalPriceWei.toString(), 'ETH');
   totalPrice.innerText = `${price} ${priceType}`;
   mintButton.disabled = false;
   mintInput.disabled = false;
@@ -319,8 +357,8 @@ function setTotalPrice() {
 async function mint() {
   const mintButton = document.getElementById("mintButton");
   mintButton.disabled = true;
-  // const spinner = '<div class="dot-elastic"></div><span>Waiting for transaction...</span>';
-  // mintButton.innerHTML = spinner;
+  const spinner = '<div class="dot-elastic"></div><span>Waiting for transaction...</span>';
+  mintButton.innerHTML = spinner;
 
   const amount = parseInt(document.getElementById("mintInput").value);
   const value = BigInt(info.deploymentConfig.mintPrice) * BigInt(amount);

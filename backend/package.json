@@ -26,6 +26,8 @@
     "upload_metadata": "node utils/nftport/uploadMetas",
     "deploy_contract": "node utils/nftport/deployContract",
     "get_contract": "node utils/nftport/retrieveContract",
+    "mint": "node utils/nftport/mint %npm_config_start% %npm_config_end%",
+    "check_txns": "node utils/nftport/checkTxns %npm_config_dir%",
     "update_public_mint_start_date": "node utils/nftport/updateContract.js -u public_mint_start_date",
     "update_presale_mint_start_date": "node utils/nftport/updateContract.js -u presale_mint_start_date",
     "update_presale_whitelisted_addresses": "node utils/nftport/updateContract.js -u presale_whitelisted_addresses",

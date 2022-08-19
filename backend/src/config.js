@@ -52,6 +52,7 @@ const CHAIN = 'rinkeby'; // only rinkeby, polygon, or ethereum
 // REQUIRED CONTRACT DETAILS THAT CANNOT BE UPDATED LATER!
 const CONTRACT_NAME = 'WILD THE BEAST';
 const CONTRACT_SYMBOL = 'WTB';
+// const CONTRACT_TYPE = 'erc721';
 const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
 const OWNER_ADDRESS = '0x7C6019230af7F2C70855eED55A3fB602f56e0Ab5';
 const TREASURY_ADDRESS = '0xB83d697Ca388946fa785751Ab7Cdb1e125d95fB6';
