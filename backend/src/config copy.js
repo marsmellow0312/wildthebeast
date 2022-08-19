@@ -7,7 +7,7 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.ETH;
 
 // General metadata for Ethereum
-const namePrefix = "WILD THE BEASTS";
+const namePrefix = "WILD THE BEAST";
 const description = "WTB is a collection of 12,000 NFT Beasts a unique digital collection that lives on the Ethereum blockchain. Each character is born from a unique algorithm, the rarer your BEAST trait, the stronger it is in the game. Your The Beast doubles as your in-game Beast Ecosystem membership card, and grants access to member-only benefits, the first of which is access to THE WILD GAME . Future areas and facilities can be unlocked by the community through roadmap activation. Visit www.WildTheBeast.com for more details.";
 const baseUri = "https://ipfs.io/ipfs/"; // This will be replaced automatically
 
@@ -50,12 +50,13 @@ const LIMIT = 2; // Your API key rate limit
 const CHAIN = 'rinkeby'; // only rinkeby, polygon, or ethereum
 
 // REQUIRED CONTRACT DETAILS THAT CANNOT BE UPDATED LATER!
-const CONTRACT_NAME = 'WILD THE BEASTS';
-const CONTRACT_SYMBOL = 'WTBS';
+const CONTRACT_NAME = 'WILD THE BEAST';
+const CONTRACT_SYMBOL = 'WTB';
+const CONTRACT_TYPE = 'erc721';
 const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
 const OWNER_ADDRESS = '0xB83d697Ca388946fa785751Ab7Cdb1e125d95fB6';
 const TREASURY_ADDRESS = '0xB83d697Ca388946fa785751Ab7Cdb1e125d95fB6';
-const MAX_SUPPLY = 20; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
+const MAX_SUPPLY = 12000; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
 const MINT_PRICE = 0.20; // Minting price per NFT. Rinkeby = ETH, Ethereum = ETH, Polygon = MATIC. CANNOT BE UPDATED!
 const TOKENS_PER_MINT = 2; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
 
@@ -68,7 +69,7 @@ const ROYALTY_SHARE = 250; // Percentage of the token price that goes to the roy
 const ROYALTY_ADDRESS = "0xB83d697Ca388946fa785751Ab7Cdb1e125d95fB6"; // Address that will receive the royalty
 const BASE_URI = null; // only update if you want to manually set the base uri
 const PREREVEAL_TOKEN_URI = null; // only update if you want to manually set the prereveal token uri
-const PRESALE_WHITELISTED_ADDRESSES = ["0x7C6019230af7F2C70855eED55A3fB602f56e0Ab5"]; // only update if you want to manually set the whitelisted addresses
+const PRESALE_WHITELISTED_ADDRESSES = [0x7C6019230af7F2C70855eED55A3fB602f56e0Ab5]; // only update if you want to manually set the whitelisted addresses
 
 // ** OPTIONAL **
 let CONTRACT_ADDRESS = "YOUR CONTRACT ADDRESS"; // If you want to manually include it
@@ -178,6 +179,7 @@ module.exports = {
   AUTH,
   LIMIT,
   CONTRACT_ADDRESS,
+  // MINT_TO_ADDRESS,
   OWNER_ADDRESS,
   TREASURY_ADDRESS,
   CHAIN,
@@ -187,6 +189,7 @@ module.exports = {
   GENERIC_IMAGE,
   CONTRACT_NAME,
   CONTRACT_SYMBOL,
+  CONTRACT_TYPE,
   METADATA_UPDATABLE,
   ROYALTY_SHARE,
   ROYALTY_ADDRESS,
